@@ -23,3 +23,6 @@
     background-color: bisque;
     padding: 3px;
 }
+.list{
+    text-decoration-line: line-through;
+}

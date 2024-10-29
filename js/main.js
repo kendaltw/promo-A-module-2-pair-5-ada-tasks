@@ -24,5 +24,15 @@ for (const task of tasks) {
     list.innerHTML += `<li><input type= checkbox>${task.name}</input></li>`
 }
 
+/*Cuando la usuaria haga click en la casilla de la tarea
+    se tacha el texto
+*/
+
+list.addEventListener ("click", (event) =>{
+    const listElement = event.target;
+    listElement.classList.add("list");
+
+})
+
 
 
