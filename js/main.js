@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 const tasks = [
     { name: "Recoger setas en el campo", completed: true, id: 1 },
     { name: "Comprar pilas", completed: true, id: 2 },
@@ -15,11 +17,11 @@ const tasks = [
 Por cada elemento de la lista
 pintar la tarea en el html
 */
-const list = (".list");
+const list = document.querySelector(".js-list");
 
 for (const task of tasks) {
-    console.log(task)
-    list.innerHTML += `$<li>{task}</li>`
+    
+    list.innerHTML += `<li>${task.name}</li>`
 }
 
 
