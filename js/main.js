@@ -21,7 +21,7 @@ const list = document.querySelector(".js-list");
 
 for (const task of tasks) {
     
-    list.innerHTML += `<li>${task.name}</li>`
+    list.innerHTML += `<li><input type= checkbox>${task.name}</input></li>`
 }
 
 
