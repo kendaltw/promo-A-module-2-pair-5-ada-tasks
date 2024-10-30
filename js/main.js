@@ -21,18 +21,31 @@ const list = document.querySelector(".js-list");
 
 for (const task of tasks) {
     
-    list.innerHTML += `<li><input type= checkbox>${task.name}</input></li>`
+    list.innerHTML += `<li><input id=${task.id} type="checkbox"><p>${task.name}</p></li>`
 }
 
 /*Cuando la usuaria haga click en la casilla de la tarea
     se tacha el texto
 */
 
-list.addEventListener ("click", (event) =>{
-    const listElement = event.target;
-    listElement.classList.add("list");
+const handleClickList =(event) => {
+    const taskId = parseInt(event.target.id);
+    if (!taskId) return;
+    //list.classList.add("list");
+    
+};
+/*const checkList = handleClickList.map((task) =>{
+    console.log(checkList);
+        
+    //return taskId.classList.add ("list");
 
 })
+*/    
+
+list.addEventListener ("click", handleClickList);
+    
+
+
 
 
 
