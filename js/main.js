@@ -35,7 +35,7 @@ const addClick = (event) => {
         name: taskName.value,
         completed: false,
     };
-    list.innerHTML += `<li><input type="checkbox"><p>${nameTask.name.completed}</p></li>`
+    list.innerHTML += `<li><input type="checkbox"><p>${nameTask}</p></li>`
     
     
 
