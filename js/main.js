@@ -13,10 +13,12 @@ fetch(SERVER_URL)
         return response.json();
     })
     .then((data) => {
-        console.log(data);
         tasks = data.results;
         renderTasks();
+        
+        
     })
+    const savedTasks = JSON.parse(localStorage.getItem("taskName"));
 
 function renderTasks() {
     for (const task of tasks) {
@@ -35,11 +37,18 @@ const addClick = (event) => {
         name: taskName.value,
         completed: false,
     };
-    list.innerHTML += `<li><input type="checkbox"><p>${nameTask}</p></li>`
-    
+    list.innerHTML += `<li><input type="checkbox"><p>${(nameTask)}</p></li>`
+    console.log(nameTask);
+    localStorage.setItem("nameTask", JSON.stringify(nameTask));
+    const savedTasks = JSON.parse(localStorage.getItem("nameTask"));    
+} 
+//no funciona stringify: seguir desde aquí
+
+
     
 
-} 
+
+
 
 
 
