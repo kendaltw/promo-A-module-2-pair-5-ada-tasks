@@ -15,37 +15,61 @@ fetch(SERVER_URL)
     .then((data) => {
         tasks = data.results;
         renderTasks();
-        
-        
+
+
     })
-    const savedTasks = JSON.parse(localStorage.getItem("taskName"));
+const savedTasks = JSON.parse(localStorage.getItem("taskName"));
 
 function renderTasks() {
     for (const task of tasks) {
 
-        list.innerHTML += `<li><input id=${task.id} type="checkbox"><p>${task.name}</p></li>`
+        const liElement = document.createElement("li");
+        list.appendChild(liElement);
+
+        const taskElement = document.createElement("input");
+        liElement.appendChild(taskElement);
+        taskElement.setAttribute("type", "checkbox");
+
+        const listNames = document.createTextNode(task.name);
+        liElement.appendChild(listNames);
     }
 }
+
 /* Cuando la usuaria haga click:
     - recoger la tarea que ha escrito
     - pintarla en el listado
 
 */
-const addClick = (event) => {
-    event.preventDefault();
+function addClick(ev) {
+    ev.preventDefault();
     const nameTask = {
         name: taskName.value,
         completed: false,
     };
-    list.innerHTML += `<li><input type="checkbox"><p>${(nameTask)}</p></li>`
-    console.log(nameTask);
-    localStorage.setItem("nameTask", JSON.stringify(nameTask));
-    const savedTasks = JSON.parse(localStorage.getItem("nameTask"));    
-} 
+
+
+
+
+}
+
+
+
+
+// const addClick = (event) => {
+//     event.preventDefault();
+//     const nameTask = {
+//         name: taskName.value,
+//         completed: false,
+//     };
+//     list.innerHTML += `<li><input type="checkbox"><p>${(nameTask)}</p></li>`
+//     console.log(nameTask);
+//     localStorage.setItem("nameTask", JSON.stringify(nameTask));
+//     const savedTasks = JSON.parse(localStorage.getItem("nameTask"));
+// }
 //no funciona stringify: seguir desde aquí
 
 
-    
+
 
 
 
