@@ -6,6 +6,7 @@ const SERVER_URL = `https://dev.adalab.es/api/todo/${GITHUB_USER}`;
 const list = document.querySelector(".js-list");
 const taskName = document.querySelector(".js-task");
 const button = document.querySelector(".js-button");
+const addTask = document.querySelector(".js-add-task");
 let tasks = [];
 
 fetch(SERVER_URL)
@@ -19,6 +20,9 @@ fetch(SERVER_URL)
 
     })
 const savedTasks = JSON.parse(localStorage.getItem("taskName"));
+
+
+
 
 function renderTasks() {
     for (const task of tasks) {
@@ -35,6 +39,7 @@ function renderTasks() {
     }
 }
 
+
 /* Cuando la usuaria haga click:
     - recoger la tarea que ha escrito
     - pintarla en el listado
@@ -42,25 +47,25 @@ function renderTasks() {
 */
 function addClick(ev) {
     ev.preventDefault();
-    const nameTask = {
-        name: taskName.value,
+    const taskInput = addTask.value;
+    console.log(taskInput);
+    renderTasks.push({
+        name: taskInput,
         completed: false,
-    };
-
-
-
+    })
+    
 
 }
 
 
 
 
-// const addClick = (event) => {
-//     event.preventDefault();
-//     const nameTask = {
-//         name: taskName.value,
-//         completed: false,
-//     };
+  /*const addClick = (event) => {
+    event.preventDefault();
+    const nameTask = {
+    name: taskName.value,
+    completed: false,
+}};
 //     list.innerHTML += `<li><input type="checkbox"><p>${(nameTask)}</p></li>`
 //     console.log(nameTask);
 //     localStorage.setItem("nameTask", JSON.stringify(nameTask));
